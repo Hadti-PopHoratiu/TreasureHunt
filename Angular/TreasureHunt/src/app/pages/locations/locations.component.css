@@ -1,0 +1,41 @@
+.padding_left{
+    padding-left: 5px;
+}
+
+.padding_bottom{
+    padding-bottom: 10px;
+}
+
+.align_center{
+    display: block;
+    margin: auto;
+    
+}
+
+.line_background{
+    background-color: lightblue;
+    border-radius: 20px;
+    padding-bottom: 10px;
+}
+
+.design_subject{
+    border : 1px solid #ddd;
+    text-align: left;
+}
+
+.design_others{
+    border : 1px solid #ddd;
+    text-align: center;
+}
+
+  
+  table {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 15px;
+  }

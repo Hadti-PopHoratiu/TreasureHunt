@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Map</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <agm-map [latitude]="center.lat" [longitude]="center.lng" [zoom]="zoom">
+    <agm-marker [latitude]="center.lat" [longitude]="center.lng"></agm-marker>
+    <agm-polygon *ngFor="let polygon of polygons" [paths]="polygon">
+    </agm-polygon>
+  </agm-map>
+</ion-content>

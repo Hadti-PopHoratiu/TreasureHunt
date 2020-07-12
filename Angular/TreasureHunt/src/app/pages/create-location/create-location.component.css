@@ -1,0 +1,20 @@
+.form-control.ng-touched.ng-invalid{
+  border: 1.5px solid red;
+}
+
+agm-map {
+  height: 400px;
+  width: 100%;
+}
+
+.location{
+  background: green;
+  margin-top: 20px;
+}
+
+.alert {
+  background: #f14343;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+}

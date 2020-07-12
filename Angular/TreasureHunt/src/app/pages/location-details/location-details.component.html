@@ -1,0 +1,80 @@
+<div style="margin-top: 2%">
+        <div class=" col-md-6  offset-md-3">
+        <form #form="ngForm" (ngSubmit)="onPutSubmit()">
+    
+            <div class="form-group ">
+                <label for="locationName">Location Name</label>
+                <input 
+                    required 
+                    minlength="5" 
+                    [(ngModel)]="this.postLocationStructure.name" 
+                    name="locationName" 
+                    #locationName="ngModel"
+                    id="locationName" 
+                    type="text" 
+                    class="form-control input-md">
+                <div 
+                    class="alert alert-danger" 
+                    *ngIf="locationName.touched && !locationName.valid">
+                    <div *ngIf="locationName.errors.required">
+                        Location name is required !
+                    </div>
+                    <div *ngIf="locationName.errors.minlength">
+                        The name should be minimum {{locationName.errors.minlength.requiredLength}} characters !
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="adress">Adress</label>
+                <input 
+                    required 
+                    minlength="10" 
+                    [(ngModel)]="postLocationStructure.adress"  
+                    name="adress" 
+                    #adress="ngModel" 
+                    type="text"
+                    id="adress" 
+                    class="form-control input-md">
+                <div 
+                    class="alert alert-danger" 
+                    *ngIf="adress.touched && !adress.valid">
+                    <div *ngIf="adress.errors.required">
+                        Adress name is required !
+                    </div>
+                    <div *ngIf="adress.errors.minlength">
+                        The adress should be minimum {{adress.errors.minlength.requiredLength}} characters !
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <!-- <div class="alert alert-danger"
+                     *ngIf="this.polygon.length == 0"
+                     [style.display] = "alertMap ? 'block' : 'none'">
+                    The zone should be minimum 1 point !
+                </div> -->
+                <!-- [draggingCursor]="reloadPolygone()"> -->
+                <agm-map 
+                         [latitude]="center.lat" 
+                         [longitude]="center.lng" 
+                         [zoom]="zoom" 
+                         (mapReady)="onMapReady($event)"> 
+                        <agm-polygon
+                                    [paths]="polygon">
+                        </agm-polygon>        
+                </agm-map>
+            </div>
+    
+            <div class="text-center" *ngIf="isPost">
+                <button class="btn btn-primary">
+                    Submit
+                </button>
+            </div>
+            <div class="text-center" *ngIf="!isPost">
+                <button class="btn btn-primary disabled" disabled>
+                    Submit
+                </button>
+            </div>
+        </form>
+        </div>
+    </div>

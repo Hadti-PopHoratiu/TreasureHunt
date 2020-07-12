@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p *ngIf="auth.loading" text-center>Loading...</p>
+  <ng-template [ngIf]="!auth.loading">
+    <!-- Not loading, not logged in: show login button -->
+    <button
+      ion-button
+      block
+      color="primary"
+      *ngIf="!auth.loggedIn"
+      (click)="auth.login()">Log In</button>
+  </ng-template>
+</ion-content>

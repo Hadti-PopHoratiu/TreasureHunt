@@ -1,0 +1,26 @@
+<div style="margin-top: 2%">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-1 row">
+                <table>
+                    <tr class="design_others">
+                        <th>Lastname</th>
+                        <th>Firstname</th>
+                        <th>Email</th>
+                        <th>Options</th>
+                    </tr>
+                    <tr *ngFor="let user of users">
+                        <td class=" design_others">{{user.lastname}}</td>
+                        <td class="design_others ">{{user.firstname}}</td>
+                        <td class=" design_others">{{user.email}}</td>
+                        <td class="design_others">
+                            <button routerLink="/user/{{user._id}}" type="button" class="btn btn-sm btn-info" id="edit">
+                                Edit
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
